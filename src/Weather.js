@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 export default function Weather(props){
-    const [city, setCity]= useState(props.defaultCity)
+    const [city, setCity]= useState(props.defaultCity);
     const[ready, setReady]= useState(false); 
     const[weatherData, setweatherData]=useState([]);
     
