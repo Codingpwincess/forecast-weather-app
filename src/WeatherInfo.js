@@ -6,7 +6,7 @@ import WeatherUnit from './WeatherUnit'
 export default function WeatherInfo(props){
     return(
     <div className='WeatherInfo'>
-        <h1 className="mt-2">{props.data.city}</h1> 
+        <h1 className="mt-5">{props.data.city}, {props.data.country}</h1> 
             <ul>
                 <li><FormattedDate date={props.data.date}/></li>
                 <li>{props.data.description}</li>
@@ -14,7 +14,7 @@ export default function WeatherInfo(props){
                 <div className="row">
 <div className="col-6">
     <div className='float-left'>
-    <WeatherIcon code={props.data.icon}/>
+    <WeatherIcon code={props.data.icon} size={150}/>
     </div>
                 </div>
                 <div className="col-6">

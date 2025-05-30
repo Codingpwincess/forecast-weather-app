@@ -1,15 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Bytesized&family=Cherry+Bomb+One&family=Luckiest+Guy&family=Monsieur+La+Doulaise&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Staatliches&display=swap');
+
+
 .Weather{
     border: 2px solid rgb(22, 3, 22);
     color: rgb(135,135, 135);
     margin: 30px;
     padding: 16px;
     border-radius: 2rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
 }
 
 .Weather h1{
     font-size:30px;
     font-weight:500;
     line-height: 29px;
+    color: black;
+    font-family: "Staatliches", sans-serif;
 }
 .Weather ul{
     margin: 0;
@@ -18,7 +25,7 @@
 
 .Weather li{
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 400;
     line-height: 19px;
     list-style: none;
 }
