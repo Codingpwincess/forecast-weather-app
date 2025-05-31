@@ -1,13 +1,18 @@
-import React, {useState} from 'react';
-import WeatherIcon from './WeatherIcon';
+import React, {useState, useEffect} from 'react';
+import ForecastDay from './ForecastDay';
 import './WeatherForecast.css';
 import axios from 'axios';
-import ForecastIcon  from './ForecastIcon';
+import {Helix} from 'ldrs/react';
+import 'ldrs/react/Helix.css';
+
 
 
 export default function WeatherForecast(props){
     let [loaded, setLoaded]= useState(false);
     let [forecast, setForecast]= useState(null);
+    useEffect(() =>{
+setLoaded(false);
+    }, [props.coordinates]);
     
     function handleResponse(response){
     console.log(props);
@@ -19,15 +24,26 @@ export default function WeatherForecast(props){
 if(loaded){
  return(
 <div className='WeatherForecast'>
+    <h1>Six day Forecast</h1>
         <div className='row'>
             <div className='col'> 
-                <div className='forecast-day'>{forecast[0].time}</div>
-                <div className='forecast-icon'><ForecastIcon code={forecast[0].condition.icon} size={36}/></div>
-                <div className='forecast-temps'>
-                <span className='forecast-temp-max'>{forecast[0].temperature.maximum}°</span>
-                <span className='forecast-temp-min'>{forecast[0].temperature.minimum}°</span>
-             </div>
-            </div>
+                <ForecastDay data={forecast[1]}/>
+        </div>
+            <div className='col'> 
+                <ForecastDay data={forecast[2]}/>
+        </div>
+            <div className='col'> 
+                <ForecastDay data={forecast[3]}/>
+        </div>
+            <div className='col'> 
+                <ForecastDay data={forecast[4]}/>
+        </div>
+            <div className='col'> 
+                <ForecastDay data={forecast[5]}/>
+        </div>
+            <div className='col'> 
+                <ForecastDay data={forecast[6]}/>
+        </div>
         </div>
     </div>
 );
@@ -40,7 +56,7 @@ if(loaded){
 
     axios.get(apiUrl).then(handleResponse);
 
-return "Loading forecast";
+return <Helix size={40} speed={1.3} color="black"/>
   
 }
        

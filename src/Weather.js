@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import WeatherInfo from './WeatherInfo';
 import WeatherForecast from './WeatherForecast';
+import { Trio } from 'ldrs/react';
+import 'ldrs/react/Trio.css';
 import './Weather.css';
 import axios from 'axios';
 
@@ -61,7 +63,7 @@ return(
     )
 } else{
     search();
-    return "The appa is loading.."
+    return <Trio size={40} speed={1.3} color="black"/>
 }
     
 
